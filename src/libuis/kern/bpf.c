@@ -153,7 +153,7 @@ int xdp_filter(struct xdp_md *ctx)
 		return XDP_PASS;
 	}
 
-	__u8 ip_proto;
+	int ip_proto;
 	if (eth_proto == bpf_htons(ETH_P_IP)) {
 		struct iphdr *ip = NULL;
 		ip_proto = parse_iphdr(&view, &ip);
